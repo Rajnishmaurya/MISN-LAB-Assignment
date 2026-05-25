@@ -1,0 +1,7 @@
+Split      : test
+Checkpoint : checkpoints/translation_best.pt
+Beam width : 1
+Examples   : 20780
+Loss       : 0.0383
+BLEU (100) : 25.46
+CHRF++(100): 57.71

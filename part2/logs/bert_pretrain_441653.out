@@ -1,0 +1,85 @@
+========================================================
+  JOB ID    : 441653
+  NODE      : rsgpu022
+  START     : Sat May 23 19:17:02 IST 2026
+========================================================
+Sat May 23 19:17:04 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:3B:00.0 Off |                    0 |
+| N/A   43C    P0             70W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Python     : 3.10.20
+PyTorch    : 2.7.1+cu118
+CUDA avail : True
+GPU        : NVIDIA A100 80GB PCIe
+VRAM       : 85.0 GB
+
+========================================================
+  Starting BERT MLM pretraining
+========================================================
+============================================================
+  BERT Pretraining — MLM
+============================================================
+  Device : cuda
+  GPU    : NVIDIA A100 80GB PCIe
+  VRAM   : 85.0 GB
+  AMP    : bfloat16
+
+  Train : 494,385 samples  (7,725 batches)
+  Val   : 10,089  samples  (158  batches)
+
+  BERT params : 100,109,440  (~100.1M)
+============================================================
+  Starting MLM pretraining
+============================================================
+
+  Epoch 1/5 | 58.3min | GPU 41.80GB | LR 9.46e-05
+    Train Loss: 6.4781  PPL: 650.75
+    Val   Loss: 5.1328  PPL: 169.49
+    ✓  Best BERT model saved (epoch 1)
+
+  Epoch 2/5 | 58.3min | GPU 41.80GB | LR 7.10e-05
+    Train Loss: 4.7499  PPL: 115.57
+    Val   Loss: 4.2770  PPL: 72.02
+    ✓  Best BERT model saved (epoch 2)
+
+  Epoch 3/5 | 58.6min | GPU 41.80GB | LR 3.84e-05
+    Train Loss: 4.1712  PPL: 64.79
+    Val   Loss: 3.8612  PPL: 47.52
+    ✓  Best BERT model saved (epoch 3)
+
+  Epoch 4/5 | 58.5min | GPU 41.80GB | LR 1.08e-05
+    Train Loss: 3.8838  PPL: 48.61
+    Val   Loss: 3.6628  PPL: 38.97
+    ✓  Best BERT model saved (epoch 4)
+
+  Epoch 5/5 | 58.6min | GPU 41.80GB | LR 1.00e-06
+    Train Loss: 3.7704  PPL: 43.40
+    Val   Loss: 3.6555  PPL: 38.69
+    ✓  Best BERT model saved (epoch 5)
+
+============================================================
+  BERT pretraining complete  |  4.87 h
+  Best epoch: 5  |  Best val loss: 3.6555
+  Checkpoint: checkpoints/bert_pretrained_best.pt
+============================================================
+
+========================================================
+  BERT pretraining done  |  exit: 0
+  END: Sun May 24 00:11:21 IST 2026
+========================================================

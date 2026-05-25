@@ -1,0 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+torch
+torchvision
+torchaudio
+
+transformers
+sentencepiece
+sacrebleu
+matplotlib
+pandas
+numpy
+pyyaml
+tqdm
+scikit-learn

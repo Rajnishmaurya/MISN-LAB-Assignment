@@ -1,0 +1,129 @@
+========================================================
+  JOB ID      : 440876
+  NODE        : rsgpu017
+  START TIME  : Fri May 22 04:09:43 IST 2026
+  WORK DIR    : 
+========================================================
+
+--- GPU Info ---
+Fri May 22 04:09:45 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:3B:00.0 Off |                    0 |
+| N/A   52C    P0             77W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+--- Python / PyTorch ---
+Python      : 3.10.20
+PyTorch     : 2.7.1+cu118
+CUDA avail  : True
+CUDA version: 11.8
+GPU count   : 1
+GPU name    : NVIDIA A100 80GB PCIe
+GPU VRAM    : 85.0 GB
+
+========================================================
+  Starting Random-Embedding NMT training
+========================================================
+============================================================
+  Random Embeddings — NMT Training
+============================================================
+  Device    : cuda
+  GPU       : NVIDIA A100 80GB PCIe
+  VRAM      : 85.0 GB
+  AMP dtype : bfloat16
+  Seed      : 42
+============================================================
+
+  Train : 435,324 pairs  (1,701 batches)
+  Valid : 48,370 pairs  (189 batches)
+  Test  : 20,780  pairs  (82  batches)
+
+  Total params     : 25,330,817
+  Trainable params : 25,330,817
+
+============================================================
+  Starting training
+============================================================
+
+  Epoch 1/10  |  time: 48.2 min  |  GPU mem: 17.36 GB  |  LR: 5.00e-05
+    Train  — Loss: 8.3491  BLEU: 0.00  CHRF++: 9.01
+    Valid  — Loss: 7.7259    BLEU: 0.00    CHRF++: 0.67
+    ✓  Best model saved (epoch 1)
+
+  Epoch 2/10  |  time: 48.2 min  |  GPU mem: 17.38 GB  |  LR: 1.00e-04
+    Train  — Loss: 7.6482  BLEU: 0.02  CHRF++: 0.67
+    Valid  — Loss: 7.2556    BLEU: 0.06    CHRF++: 4.17
+    ✓  Best model saved (epoch 2)
+
+  Epoch 3/10  |  time: 48.2 min  |  GPU mem: 17.38 GB  |  LR: 9.62e-05
+    Train  — Loss: 7.2058  BLEU: 0.08  CHRF++: 4.59
+    Valid  — Loss: 6.9964    BLEU: 0.38    CHRF++: 5.89
+    ✓  Best model saved (epoch 3)
+
+  Epoch 4/10  |  time: 47.1 min  |  GPU mem: 17.38 GB  |  LR: 8.54e-05
+    Train  — Loss: 6.9846  BLEU: 0.22  CHRF++: 6.60
+    Valid  — Loss: 6.9072    BLEU: 0.48    CHRF++: 6.30
+    ✓  Best model saved (epoch 4)
+
+  Epoch 5/10  |  time: 42.5 min  |  GPU mem: 17.38 GB  |  LR: 6.91e-05
+    Train  — Loss: 6.8502  BLEU: 0.26  CHRF++: 7.87
+    Valid  — Loss: 6.8379    BLEU: 0.75    CHRF++: 6.66
+    ✓  Best model saved (epoch 5)
+
+  Epoch 6/10  |  time: 41.6 min  |  GPU mem: 17.38 GB  |  LR: 5.00e-05
+    Train  — Loss: 6.7545  BLEU: 0.36  CHRF++: 8.52
+    Valid  — Loss: 6.7960    BLEU: 1.03    CHRF++: 7.57
+    ✓  Best model saved (epoch 6)
+
+  Epoch 7/10  |  time: 41.9 min  |  GPU mem: 17.38 GB  |  LR: 3.09e-05
+    Train  — Loss: 6.6867  BLEU: 0.43  CHRF++: 9.74
+    Valid  — Loss: 6.7674    BLEU: 1.18    CHRF++: 7.72
+    ✓  Best model saved (epoch 7)
+
+  Epoch 8/10  |  time: 42.3 min  |  GPU mem: 17.38 GB  |  LR: 1.46e-05
+    Train  — Loss: 6.6538  BLEU: 0.49  CHRF++: 10.21
+    Valid  — Loss: 6.7520    BLEU: 1.34    CHRF++: 8.15
+    ✓  Best model saved (epoch 8)
+
+  Epoch 9/10  |  time: 42.1 min  |  GPU mem: 17.38 GB  |  LR: 3.81e-06
+    Train  — Loss: 6.6269  BLEU: 0.50  CHRF++: 10.45
+    Valid  — Loss: 6.7356    BLEU: 1.23    CHRF++: 7.98
+    ✓  Best model saved (epoch 9)
+
+  Epoch 10/10  |  time: 41.7 min  |  GPU mem: 17.38 GB  |  LR: 1.00e-06
+    Train  — Loss: 6.6162  BLEU: 0.47  CHRF++: 10.78
+    Valid  — Loss: 6.7372    BLEU: 1.28    CHRF++: 8.07
+
+============================================================
+  Running test evaluation with best model ...
+============================================================
+
+  TEST RESULTS (best model from epoch 9)
+  Loss       : 6.7903
+  BLEU (100)  : 1.66
+  CHRF++ (100): 8.47
+
+============================================================
+  Random training complete  |  total time: 7.40 h
+  All results saved to outputs/random/
+============================================================
+
+========================================================
+  Training finished  |  exit code: 0
+  END TIME: Fri May 22 11:37:07 IST 2026
+========================================================

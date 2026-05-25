@@ -1,0 +1,135 @@
+========================================================
+  JOB ID      : 440877
+  NODE        : rsgpu018
+  START TIME  : Fri May 22 05:12:17 IST 2026
+  WORK DIR    : 
+========================================================
+
+--- GPU Info ---
+Fri May 22 05:12:19 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:5E:00.0 Off |                    0 |
+| N/A   47C    P0             73W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+--- Python / PyTorch ---
+Python      : 3.10.20
+PyTorch     : 2.7.1+cu118
+CUDA avail  : True
+CUDA version: 11.8
+GPU count   : 1
+GPU name    : NVIDIA A100 80GB PCIe
+GPU VRAM    : 85.0 GB
+
+========================================================
+  Starting BERT NMT training
+========================================================
+============================================================
+  BERT Embeddings — NMT Training
+============================================================
+  Device    : cuda
+  GPU       : NVIDIA A100 80GB PCIe
+  VRAM      : 85.0 GB
+  AMP dtype : bfloat16
+  Seed      : 42
+============================================================
+
+  Train : 435,324 pairs  (3,401 batches)
+  Valid : 48,370 pairs  (378 batches)
+  Test  : 20,780  pairs  (163  batches)
+
+  Initializing encoder embeddings with Hindi BERT ...
+  Aligned 15994/15996 tokens with BERT vocabulary (1 tokens had no BERT match, kept random init).
+  Initializing decoder embeddings with Marathi BERT ...
+  Aligned 15994/15996 tokens with BERT vocabulary (1 tokens had no BERT match, kept random init).
+
+  Total params     : 43,811,969
+  Trainable params : 43,811,969
+
+============================================================
+  Starting training
+============================================================
+
+  Epoch 1/10  |  time: 43.8 min  |  GPU mem: 10.02 GB  |  LR: 5.00e-05
+    Train  — Loss: 8.2292  BLEU: 0.00  CHRF++: 3.79
+    Valid  — Loss: 7.6595    BLEU: 0.00    CHRF++: 1.12
+    ✓  Best model saved (epoch 1)
+
+  Epoch 2/10  |  time: 44.7 min  |  GPU mem: 10.02 GB  |  LR: 1.00e-04
+    Train  — Loss: 7.5849  BLEU: 0.02  CHRF++: 1.10
+    Valid  — Loss: 7.1582    BLEU: 0.05    CHRF++: 3.78
+    ✓  Best model saved (epoch 2)
+
+  Epoch 3/10  |  time: 44.2 min  |  GPU mem: 10.02 GB  |  LR: 9.62e-05
+    Train  — Loss: 7.0646  BLEU: 0.03  CHRF++: 4.70
+    Valid  — Loss: 6.9761    BLEU: 0.24    CHRF++: 4.63
+    ✓  Best model saved (epoch 3)
+
+  Epoch 4/10  |  time: 43.7 min  |  GPU mem: 10.02 GB  |  LR: 8.54e-05
+    Train  — Loss: 6.7897  BLEU: 0.22  CHRF++: 8.16
+    Valid  — Loss: 6.8738    BLEU: 0.66    CHRF++: 6.54
+    ✓  Best model saved (epoch 4)
+
+  Epoch 5/10  |  time: 43.8 min  |  GPU mem: 10.02 GB  |  LR: 6.91e-05
+    Train  — Loss: 6.6425  BLEU: 0.34  CHRF++: 9.82
+    Valid  — Loss: 6.8185    BLEU: 0.57    CHRF++: 6.42
+    ✓  Best model saved (epoch 5)
+
+  Epoch 6/10  |  time: 44.8 min  |  GPU mem: 10.02 GB  |  LR: 5.00e-05
+    Train  — Loss: 6.5471  BLEU: 0.48  CHRF++: 10.42
+    Valid  — Loss: 6.7741    BLEU: 0.68    CHRF++: 7.16
+    ✓  Best model saved (epoch 6)
+
+  Epoch 7/10  |  time: 44.9 min  |  GPU mem: 10.02 GB  |  LR: 3.09e-05
+    Train  — Loss: 6.4830  BLEU: 0.49  CHRF++: 10.83
+    Valid  — Loss: 6.7405    BLEU: 0.80    CHRF++: 7.40
+    ✓  Best model saved (epoch 7)
+
+  Epoch 8/10  |  time: 43.7 min  |  GPU mem: 10.02 GB  |  LR: 1.46e-05
+    Train  — Loss: 6.4372  BLEU: 0.50  CHRF++: 11.16
+    Valid  — Loss: 6.7113    BLEU: 0.78    CHRF++: 7.55
+    ✓  Best model saved (epoch 8)
+
+  Epoch 9/10  |  time: 42.1 min  |  GPU mem: 10.02 GB  |  LR: 3.81e-06
+    Train  — Loss: 6.4135  BLEU: 0.60  CHRF++: 11.27
+    Valid  — Loss: 6.7067    BLEU: 0.79    CHRF++: 7.61
+    ✓  Best model saved (epoch 9)
+
+  Epoch 10/10  |  time: 42.8 min  |  GPU mem: 10.02 GB  |  LR: 1.00e-06
+    Train  — Loss: 6.4063  BLEU: 0.52  CHRF++: 11.10
+    Valid  — Loss: 6.7031    BLEU: 0.80    CHRF++: 7.68
+    ✓  Best model saved (epoch 10)
+
+============================================================
+  Running test evaluation with best model ...
+============================================================
+
+  TEST RESULTS (best model from epoch 10)
+  Loss     : 6.7516
+  BLEU (100): 0.97
+  CHRF++ (100): 7.96
+
+============================================================
+  BERT training complete  |  total time: 7.31 h
+  All results saved to outputs/bert/
+============================================================
+
+========================================================
+  Training finished  |  exit code: 0
+  END TIME: Fri May 22 12:36:22 IST 2026
+========================================================

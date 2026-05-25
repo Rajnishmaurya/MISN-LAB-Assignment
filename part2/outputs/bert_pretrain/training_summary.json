@@ -1,0 +1,81 @@
+{
+  "model": "bert_pretrain",
+  "config": {
+    "pretrain_text": "data/pretrain_corpus.txt",
+    "spm_model": "spm_part2.model",
+    "vocab_size": 16000,
+    "hidden_dim": 768,
+    "num_layers": 12,
+    "num_heads": 12,
+    "num_kv_heads": 4,
+    "ffn_dim": 3072,
+    "max_seq_len": 512,
+    "dropout": 0.1,
+    "pad_id": 0,
+    "mask_prob": 0.15,
+    "batch_size": 64,
+    "accumulation_steps": 4,
+    "epochs": 5,
+    "lr": 0.0001,
+    "min_lr": 1e-06,
+    "warmup_ratio": 0.06,
+    "seed": 42,
+    "num_workers": 4,
+    "amp_dtype": "bfloat16"
+  },
+  "params": 100109440,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "training": {
+    "total_hours": 4.87,
+    "best_epoch": 5,
+    "best_val_loss": 3.6555,
+    "best_val_ppl": 38.69
+  },
+  "per_epoch": [
+    {
+      "epoch": 1,
+      "train_loss": 6.4781,
+      "val_loss": 5.1328,
+      "lr": 0.0001,
+      "epoch_time_s": 3495.9169,
+      "train_ppl": 650.7473,
+      "val_ppl": 169.4861
+    },
+    {
+      "epoch": 2,
+      "train_loss": 4.7499,
+      "val_loss": 4.277,
+      "lr": 0.0001,
+      "epoch_time_s": 3497.7109,
+      "train_ppl": 115.5682,
+      "val_ppl": 72.021
+    },
+    {
+      "epoch": 3,
+      "train_loss": 4.1712,
+      "val_loss": 3.8612,
+      "lr": 0.0,
+      "epoch_time_s": 3515.8384,
+      "train_ppl": 64.7905,
+      "val_ppl": 47.5236
+    },
+    {
+      "epoch": 4,
+      "train_loss": 3.8838,
+      "val_loss": 3.6628,
+      "lr": 0.0,
+      "epoch_time_s": 3510.0575,
+      "train_ppl": 48.6101,
+      "val_ppl": 38.9707
+    },
+    {
+      "epoch": 5,
+      "train_loss": 3.7704,
+      "val_loss": 3.6555,
+      "lr": 0.0,
+      "epoch_time_s": 3517.0946,
+      "train_ppl": 43.3957,
+      "val_ppl": 38.6855
+    }
+  ]
+}

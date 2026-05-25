@@ -1,0 +1,61 @@
+========================================================
+  JOB ID    : 442404
+  NODE      : rsgpu016
+  START TIME: Mon May 25 11:25:00 IST 2026
+========================================================
+
+--- Beam search eval: RANDOM model (beam=5) ---
+Using device: cuda
+Evaluating split : test
+Checkpoint       : checkpoints/best_random_model.pt
+Beam width       : 2
+Loaded checkpoint from checkpoints/best_random_model.pt
+
+==================================================
+Split      : test
+Examples   : 20780
+BLEU (100) : 2.00
+CHRF++ (100): 9.34
+==================================================
+
+Results saved to outputs/eval/best_random_model_test_beam2/
+
+--- Beam search eval: BERT model (beam=5) ---
+Using device: cuda
+Evaluating split : test
+Checkpoint       : checkpoints/best_bert_model.pt
+Beam width       : 2
+Loaded checkpoint from checkpoints/best_bert_model.pt
+
+==================================================
+Split      : test
+Examples   : 20780
+BLEU (100) : 1.98
+CHRF++ (100): 9.46
+==================================================
+
+Results saved to outputs/eval/best_bert_model_test_beam2/
+
+--- Comparative analysis: BERT vs Random ---
+Loading BERT model from checkpoints/best_bert_model.pt ...
+Loading Random model from checkpoints/best_random_model.pt ...
+Decoding 20780 examples from split='test' ...
+
+============================================================
+Metric                       BERT       Random        Δ
+------------------------------------------------------------
+BLEU (100)                   0.97         1.66    -0.69
+CHRF++ (100)                 7.96         8.47    -0.50
+============================================================
+
+Comparison saved to outputs/comparison/
+
+========================================================
+  All evaluation complete
+  Results:
+    outputs/bert/test_results.txt
+    outputs/random/test_results.txt
+    outputs/eval/       (beam search results)
+    outputs/comparison/ (side-by-side + bar charts)
+  END TIME: Mon May 25 13:22:00 IST 2026
+========================================================

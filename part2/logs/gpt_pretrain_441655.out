@@ -1,0 +1,80 @@
+========================================================
+  JOB ID    : 441655
+  NODE      : rsgpu022
+  START     : Sat May 23 21:39:22 IST 2026
+========================================================
+Sat May 23 21:39:24 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:5E:00.0 Off |                    0 |
+| N/A   50C    P0             70W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+========================================================
+  Starting GPT CLM pretraining
+========================================================
+============================================================
+  GPT Pretraining — CLM
+============================================================
+  Device : cuda
+  GPU    : NVIDIA A100 80GB PCIe
+  VRAM   : 85.0 GB
+  AMP    : bfloat16
+
+  Train : 494,385 samples  (7,725 batches)
+  Val   : 10,089  samples  (158  batches)
+
+  GPT params : 125,281,408  (~125.3M)
+============================================================
+  Starting CLM pretraining
+============================================================
+
+  Epoch 1/5 | 77.5min | GPU 53.23GB | LR 9.40e-05
+    Train Loss: 5.9515  PPL: 384.32
+    Val   Loss: 4.8846  PPL: 132.24
+    ✓  Best GPT model saved (epoch 1)
+
+  Epoch 2/5 | 77.4min | GPU 53.24GB | LR 7.01e-05
+    Train Loss: 4.6284  PPL: 102.35
+    Val   Loss: 4.3155  PPL: 74.85
+    ✓  Best GPT model saved (epoch 2)
+
+  Epoch 3/5 | 77.7min | GPU 53.24GB | LR 3.77e-05
+    Train Loss: 4.2316  PPL: 68.83
+    Val   Loss: 4.0849  PPL: 59.44
+    ✓  Best GPT model saved (epoch 3)
+
+  Epoch 4/5 | 77.9min | GPU 53.24GB | LR 1.05e-05
+    Train Loss: 4.0419  PPL: 56.93
+    Val   Loss: 3.9876  PPL: 53.93
+    ✓  Best GPT model saved (epoch 4)
+
+  Epoch 5/5 | 77.6min | GPU 53.24GB | LR 1.00e-06
+    Train Loss: 3.9629  PPL: 52.61
+    Val   Loss: 3.9704  PPL: 53.01
+    ✓  Best GPT model saved (epoch 5)
+
+============================================================
+  GPT pretraining complete  |  6.47 h
+  Best epoch: 5  |  Best val loss: 3.9704
+  Checkpoint: checkpoints/gpt_pretrained_best.pt
+============================================================
+
+========================================================
+  GPT pretraining done  |  exit: 0
+  END: Sun May 24 04:09:26 IST 2026
+========================================================

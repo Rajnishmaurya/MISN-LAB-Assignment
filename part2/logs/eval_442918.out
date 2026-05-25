@@ -1,0 +1,19 @@
+========================================================
+  Part 2 — Beam Search Evaluation
+========================================================
+
+--- Greedy eval (test set) ---
+Loaded checkpoint: checkpoints/translation_best.pt
+
+=======================================================
+  Split      : test
+  Beam width : 1
+  Examples   : 20780
+  Loss       : 0.0383
+  BLEU (100) : 25.46
+  CHRF++(100): 57.71
+=======================================================
+Results saved to outputs/eval/translation_best_test_greedy/
+
+--- Beam search eval (beam=2, test set) ---
+Loaded checkpoint: checkpoints/translation_best.pt

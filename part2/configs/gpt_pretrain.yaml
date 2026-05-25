@@ -1,0 +1,33 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+pretrain_text: data/pretrain_corpus.txt   # flat text, one sentence per line
+spm_model:     spm_part2.model            # Part 2 tokenizer (shares vocab with bert_pretrain)
+
+# ── Model (~124M params) ──────────────────────────────────────────────────────
+# Architecture: GPT-2 style decoder-only
+#   - RMSNorm (not LayerNorm)
+#   - GQA with num_kv_heads=4 → 3 Q heads per KV head
+#   - RoPE (no positional embedding table)
+#   - 16 layers (vs 12 in BERT) to hit ~124M with reduced KV heads
+#   - Causal language modeling objective
+vocab_size:   16000
+hidden_dim:    768
+num_layers:     16    # 16 layers (more than BERT) to compensate for fewer KV heads
+num_heads:      12
+num_kv_heads:    4    # GQA: 3 Q heads per KV head
+ffn_dim:      3072
+max_seq_len:   512
+dropout:       0.1
+pad_id:          0
+
+# ── Training ─────────────────────────────────────────────────────────────────
+batch_size:         64
+accumulation_steps:  4    # effective batch = 256
+epochs:              5
+lr:             1.0e-4
+min_lr:         1.0e-6
+warmup_ratio:     0.05
+seed:               42
+
+# ── System ────────────────────────────────────────────────────────────────────
+num_workers:  4
+amp_dtype:    bfloat16

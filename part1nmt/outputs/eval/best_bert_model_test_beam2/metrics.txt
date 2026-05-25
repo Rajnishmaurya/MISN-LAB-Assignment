@@ -1,0 +1,6 @@
+Split      : test
+Checkpoint : checkpoints/best_bert_model.pt
+Beam width : 2
+Examples   : 20780
+BLEU (100) : 1.98
+CHRF++ (100): 9.46

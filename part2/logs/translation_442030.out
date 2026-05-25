@@ -1,0 +1,84 @@
+========================================================
+  JOB ID    : 442030
+  NODE      : rsgpu024
+  START     : Sun May 24 11:23:30 IST 2026
+========================================================
+Sun May 24 11:23:32 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:3B:00.0 Off |                    0 |
+| N/A   55C    P0             75W /  300W |       0MiB /  81920MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+========================================================
+  Starting translation fine-tuning (BERT enc + GPT dec)
+========================================================
+============================================================
+  Translation Fine-tuning
+============================================================
+  Device : cuda
+  GPU    : NVIDIA A100 80GB PCIe
+  VRAM   : 85.0 GB
+
+  Train: 435,324 | Valid: 48,370 | Test: 20,780
+
+[Encoder] Loaded 98 tensors from BERT checkpoint
+[Decoder] Loaded 130 tensors from GPT checkpoint
+[Decoder] Cross-attention params (random init, expected): 80
+  Total params     : 238,247,424
+  Encoder params   : 87,804,672
+  Decoder params   : 138,154,752
+  Cross-attn (new) : 25,178,112
+
+============================================================
+  Starting translation fine-tuning
+============================================================
+
+  Epoch 1/5 | 28.4min | GPU 22.05GB | LR 4.70e-05
+    Train  Loss: 2.2103  BLEU: 0.00  CHRF++: 7.63
+    Valid  Loss: 0.0357  BLEU: 27.85  CHRF++: 60.40
+    ✓  Best model saved (epoch 1)
+
+  Epoch 2/5 | 28.3min | GPU 22.05GB | LR 3.50e-05
+    Train  Loss: 1.3141  BLEU: 26.54  CHRF++: 59.87
+    Valid  Loss: 0.0455  BLEU: 25.82  CHRF++: 61.33
+
+  Epoch 3/5 | 28.3min | GPU 22.05GB | LR 1.89e-05
+    Train  Loss: 1.3071  BLEU: 24.75  CHRF++: 58.97
+    Valid  Loss: 0.0524  BLEU: 31.33  CHRF++: 68.58
+
+  Epoch 4/5 | 28.5min | GPU 22.05GB | LR 5.27e-06
+    Train  Loss: 1.3042  BLEU: 32.57  CHRF++: 67.73
+    Valid  Loss: 0.0548  BLEU: 25.04  CHRF++: 63.29
+
+  Epoch 5/5 | 28.2min | GPU 22.05GB | LR 1.00e-06
+    Train  Loss: 1.3033  BLEU: 26.06  CHRF++: 62.96
+    Valid  Loss: 0.0557  BLEU: 25.70  CHRF++: 63.24
+
+============================================================
+  Test evaluation with best model ...
+  TEST  Loss: 0.0384  BLEU: 25.51  CHRF++: 57.77
+
+  Fine-tuning complete | 2.36 h
+  All results in outputs/translation/
+============================================================
+
+========================================================
+  Fine-tuning done  |  exit: 0
+  Results: outputs/translation/
+  END: Sun May 24 13:48:19 IST 2026
+========================================================

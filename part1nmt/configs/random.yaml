@@ -1,0 +1,32 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+train_src: data/train.src
+train_tgt: data/train.tgt
+
+valid_src: data/valid.src
+valid_tgt: data/valid.tgt
+
+test_src: data/test.src
+test_tgt: data/test.tgt
+
+spm_model: spm.model
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+vocab_size:  16000
+emb_dim:     256
+hidden_dim:  512
+num_layers:  2
+dropout:     0.3
+
+# ── Training ──────────────────────────────────────────────────────────────────
+batch_size:         256   # A100 40GB — more headroom with small emb_dim
+accumulation_steps: 1
+epochs:             10
+lr:                 1.0e-4
+min_lr:             1.0e-6
+warmup_epochs:      2
+label_smoothing:    0.1
+seed:               42
+
+# ── System ────────────────────────────────────────────────────────────────────
+num_workers: 4
+amp_dtype:   bfloat16

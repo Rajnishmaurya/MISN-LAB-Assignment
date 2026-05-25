@@ -1,0 +1,36 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+train_src: data/train.src
+train_tgt: data/train.tgt
+
+valid_src: data/valid.src
+valid_tgt: data/valid.tgt
+
+test_src: data/test.src
+test_tgt: data/test.tgt
+
+spm_model: spm.model
+
+# ── Pretrained BERT paths ─────────────────────────────────────────────────────
+hindi_bert_path:   pretrained_models/hindi-bert-v2
+marathi_bert_path: pretrained_models/marathi-bert-v2
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+vocab_size:  16000
+emb_dim:     768      # matches BERT hidden size
+hidden_dim:  512
+num_layers:  2
+dropout:     0.3
+
+# ── Training ──────────────────────────────────────────────────────────────────
+batch_size:         128   # A100 40GB — safe with bf16
+accumulation_steps: 1     # no accumulation needed on A100
+epochs:             10
+lr:                 1.0e-4
+min_lr:             1.0e-6
+warmup_epochs:      2     # linear warmup before cosine decay
+label_smoothing:    0.1
+seed:               42
+
+# ── System ────────────────────────────────────────────────────────────────────
+num_workers: 4
+amp_dtype:   bfloat16     # A100 natively supports bf16

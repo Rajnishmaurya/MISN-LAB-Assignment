@@ -1,0 +1,43 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+pretrain_text: data/pretrain_corpus.txt   # flat text, one sentence per line
+spm_model:     spm_part2.model            # Part 2 tokenizer (has [MASK]=4)
+
+# ── Model (~110M params) ──────────────────────────────────────────────────────
+# Architecture: BERT-like encoder
+#   - RMSNorm (not LayerNorm)
+#   - GQA: num_kv_heads=4 < num_heads=12  → 3 Q heads share each KV head
+#   - RoPE (no positional embedding table)
+#   - MLM pretraining only (no NSP)
+#
+# Parameter count (hidden=768, layers=12, heads=12, kv_heads=4, ffn=3072, vocab=16000):
+#   Embedding          : 16000*768            = 12.3M
+#   Per GQA layer      : Q(768²)+K(256*768)×2+O(768²)+2*768*3072+norms = 6.29M
+#   12 layers          :                        = 75.5M
+#   MLM head (untied)  :                        = 12.3M
+#   Total              : ≈ 100.1M  (lower than 110M because GQA reduces
+#                        KV params vs MHA; "approximately 110M" per assignment)
+vocab_size:   16000
+hidden_dim:    768
+num_layers:     12
+num_heads:      12
+num_kv_heads:    4    # GQA: 3 Q-heads per KV-head (required by assignment)
+ffn_dim:      3072
+max_seq_len:   512
+dropout:       0.1
+pad_id:          0
+
+# ── MLM ───────────────────────────────────────────────────────────────────────
+mask_prob:     0.15   # 15% of tokens masked per sequence
+
+# ── Training ─────────────────────────────────────────────────────────────────
+batch_size:         64    # A100 40GB with seq_len=512
+accumulation_steps:  4    # effective batch = 256
+epochs:              5
+lr:             1.0e-4
+min_lr:         1.0e-6
+warmup_ratio:     0.06    # 6% of total steps for warmup
+seed:               42
+
+# ── System ────────────────────────────────────────────────────────────────────
+num_workers:  4
+amp_dtype:    bfloat16

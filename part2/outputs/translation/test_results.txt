@@ -1,0 +1,4 @@
+Best epoch       : 1
+Test Loss        : 0.0384
+Test BLEU (100)  : 25.51
+Test CHRF++ (100): 57.77
